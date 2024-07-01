@@ -161,14 +161,6 @@ elif selection == 'Try DeepVoiceGuard':
     In this section, you can try out DeepVoiceGuard. Upload an audio file, and DeepVoiceGuard will predict whether the audio 
     is bonafide (genuine) or spoofed (deepfake).
     """)
-
-
-
-    
-    st.write(np.zeros(1))
-
-
-
     
     # File upload
     uploaded_file = st.file_uploader("Choose an audio file", type=["wav"])
