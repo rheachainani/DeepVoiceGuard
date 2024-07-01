@@ -2,7 +2,7 @@ import base64
 import streamlit as st
 import librosa
 import numpy as np
-np._import_array()
+<void>np._import_array()
 import joblib
 from streamlit_option_menu import option_menu
 
