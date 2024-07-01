@@ -1,6 +1,6 @@
-numpy
-scikit-learn
-streamlit
-streamlit_option_menu
-joblib
-librosa
+numpy>=1.19
+scikit-learn>=0.24
+streamlit>=0.88
+streamlit_option_menu>=0.1.2
+joblib>=1.0
+librosa>=0.8
