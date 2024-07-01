@@ -5,3 +5,4 @@ streamlit==1.33.0
 streamlit_option_menu==0.3.13
 scipy==1.14.0  
 scikit-learn==1.5.0
+setuptools>=58.0.0
