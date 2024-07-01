@@ -10,6 +10,9 @@ model = joblib.load('svm_best_model.joblib')
 scaler = joblib.load('scaler.joblib')
 label_encoder = joblib.load('label_encoder.joblib')
 
+# Disable numpy initialization
+np._import_array = lambda: None
+
 st.set_page_config(page_title='DeepVoiceGuard',initial_sidebar_state='collapsed',layout='wide')
 
 @st.cache_data
