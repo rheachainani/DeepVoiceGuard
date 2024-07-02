@@ -71,7 +71,6 @@ unsafe_allow_html=True
 # Function to preprocess audio
 def preprocess_audio(audio_buffer, target_sr=22050, max_length=10):
     try:
-        # Read the audio data from the buffer
         y, sr = sf.read(BytesIO(audio_buffer))
         if sr != target_sr:
             y = librosa.resample(y, orig_sr=sr, target_sr=target_sr)
