@@ -1,6 +1,6 @@
-numpy
+numpy==1.22.0
 scikit-learn
 streamlit
 streamlit_option_menu
 joblib
-librosa
+librosa==0.10.0
