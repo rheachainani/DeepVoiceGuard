@@ -1,4 +1,4 @@
-numpy==1.19.3
+numpy
 scikit-learn
 streamlit
 streamlit_option_menu
