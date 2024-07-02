@@ -4,6 +4,8 @@ import librosa
 import numpy as np
 import joblib
 from streamlit_option_menu import option_menu
+import soundfile as sf
+from io import BytesIO
 
 # Load the trained model
 model = joblib.load('svm_best_model.joblib')
@@ -67,9 +69,10 @@ unsafe_allow_html=True
 )
 
 # Function to preprocess audio
-def preprocess_audio(file_path, target_sr=22050, max_length=10):
+def preprocess_audio(audio_buffer, target_sr=22050, max_length=10):
     try:
-        y, sr = librosa.load(file_path, sr=None)
+        # Read the audio data from the buffer
+        y, sr = sf.read(BytesIO(audio_buffer))
         if sr != target_sr:
             y = librosa.resample(y, orig_sr=sr, target_sr=target_sr)
         y = librosa.util.normalize(y)
@@ -81,7 +84,7 @@ def preprocess_audio(file_path, target_sr=22050, max_length=10):
             y = np.pad(y, (0, max_len_samples - len(y)))
         return y, target_sr
     except Exception as e:
-        st.error(f"Error processing {file_path}: {e}")
+        st.error(f"Error processing file : {e}")
         return None, None
 
 # Function for extracting MFCC, Chroma, and ZCR features
@@ -166,16 +169,14 @@ elif selection == 'Try DeepVoiceGuard':
     uploaded_file = st.file_uploader("Choose an audio file", type=["wav"])
 
     if uploaded_file is not None:
-        # Save uploaded file temporarily
-        with open("temp_audio.wav", "wb") as f:
-            f.write(uploaded_file.getbuffer())
+        audio_buffer = uploaded_file.read()  # Read the uploaded file into a buffer
         
         # Preprocess audio
-        y, sr = preprocess_audio("temp_audio.wav")
+        y, sr = preprocess_audio(audio_buffer)
         
         if y is not None:
             # Play the uploaded audio file
-            st.audio("temp_audio.wav", format="audio/wav")
+            st.audio(audio_buffer, format="audio/wav")
 
             # Extract features
             features = extract_features(y, sr)
