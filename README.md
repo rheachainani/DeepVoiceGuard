@@ -8,6 +8,7 @@ DeepVoiceGuard is an AI-powered tool designed to detect deepfake audios. It util
 - [Features](#features)
 - [About Deepfakes](#about-deepfakes)
 - [About DeepVoiceGuard](#about-deepvoiceguard)
+- [Try DeepVoiceGuard](#try-deepvoiceguard)
 - [Installation](#installation)
 - [Usage](#usage)
 
@@ -35,6 +36,10 @@ DeepVoiceGuard uses an SVM model trained on extracted audio features to predict 
 DeepVoiceGuard extracts features such as MFCC, Chroma, and Zero Crossing Rate from audio files. These features are standardized and fed into an SVM model for prediction. The accuracy of DeepVoiceGuard in distinguishing between bonafide and deepfake audios is 96%.
 
 DeepVoiceGuard aims to provide a robust defense against the proliferation of deepfake audio content, enhancing trust and authenticity in digital media.
+
+## Try DeepVoiceGuard
+
+Try out DeepVoiceGuard [here](https://deepvoiceguard.streamlit.app/). Upload an audio file, and DeepVoiceGuard will predict whether the audio is bonafide (genuine) or spoofed (deepfake).
 
 ## Installation
 
