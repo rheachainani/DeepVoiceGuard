@@ -4,3 +4,4 @@ streamlit
 streamlit_option_menu
 joblib
 librosa
+soundfile
