@@ -1,6 +1,6 @@
-numpy
-scikit-learn
-streamlit
-streamlit_option_menu
-joblib
-librosa
+numpy==1.23.0
+scikit-learn==1.1.1
+streamlit==1.10.0
+streamlit_option_menu==0.3.2
+joblib==1.1.0
+librosa==0.9.1
