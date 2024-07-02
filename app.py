@@ -2,7 +2,6 @@ import base64
 import streamlit as st
 import librosa
 import numpy as np
-np.import_array()
 import joblib
 from streamlit_option_menu import option_menu
 import soundfile as sf
