@@ -31,12 +31,11 @@ Deepfake audios can be differentiated from genuine audios through various techni
 
 ## About DeepVoiceGuard
 
-DeepVoiceGuard uses an SVM model trained on extracted audio features to predict whether an audio clip is bonafide or spoofed. The model achieves an accuracy of 96% in distinguishing between genuine and deepfake audios.
+DeepVoiceGuard utilizes an SVM model trained on extracted audio features to determine if an audio clip is authentic or a spoof. This model achieves a 96% accuracy rate in identifying genuine versus deepfake audios.
 
-DeepVoiceGuard extracts features such as MFCC, Chroma, and Zero Crossing Rate from audio files. These features are standardized and fed into an SVM model for prediction. The accuracy of DeepVoiceGuard in distinguishing between bonafide and deepfake audios is 96%.
+The system extracts features such as MFCC, Chroma, and Zero Crossing Rate from audio files. These features are standardized before being input into the SVM model for prediction. DeepVoiceGuard's accuracy in distinguishing between bonafide and deepfake audios is 96%.
 
-DeepVoiceGuard aims to provide a robust defense against the proliferation of deepfake audio content, enhancing trust and authenticity in digital media.
-
+The primary goal of DeepVoiceGuard is to provide a robust defense against the spread of deepfake audio content, thereby enhancing trust and authenticity in digital media.
 ## Try DeepVoiceGuard
 
 Try out DeepVoiceGuard [here](https://deepvoiceguard.streamlit.app/). Upload an audio file, and DeepVoiceGuard will predict whether the audio is bonafide (genuine) or spoofed (deepfake).
