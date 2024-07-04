@@ -6,6 +6,7 @@ DeepVoiceGuard is an AI-powered tool designed to detect deepfake audios. It util
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Extracted Features](#extracted-features)
 - [About Deepfakes](#about-deepfakes)
 - [About DeepVoiceGuard](#about-deepvoiceguard)
 - [Try DeepVoiceGuard](#try-deepvoiceguard)
@@ -23,6 +24,23 @@ Deepfakes are synthetic media, such as videos, images, or audio, that have been 
 - Predict whether an audio file is bonafide or spoofed using an SVM model.
 - User-friendly interface with Streamlit for easy audio file uploads and predictions.
 
+## Extracted Features
+In this project, we extract three primary features: MFCC, Chroma, and Zero Crossing Rate.
+
+#### 1. MFCC (Mel-Frequency Cepstral Coefficients):
+- MFCCs represent the short-term power spectrum of a sound signal.
+- They are derived by applying a cosine transform to the log power spectrum on a nonlinear mel scale of frequency. 
+- MFCCs capture the timbral texture of audio, which is crucial for distinguishing different types of sounds and voices.
+#### 2. Chroma Features:
+- Chroma features, or chromagrams, represent the 12 different pitch classes (semitones) of the musical octave.
+- Each pitch class corresponds to a specific frequency range, regardless of the octave. 
+- These features are useful for capturing the harmonic and tonal content of audio, making them valuable for tasks involving music and speech analysis.
+#### 3. Zero Crossing Rate (ZCR):
+- ZCR is the rate at which the audio signal changes sign from positive to negative or vice versa. 
+- It is a measure of the frequency content of the signal.
+- ZCR provides insights into the noisiness and temporal properties of the audio signal, which can help in differentiating between natural and synthetic audio.
+
+By combining MFCC, Chroma, and Zero Crossing Rate features, we can capture a comprehensive set of characteristics from the audio signal. MFCCs provide detailed information about the spectral properties, Chroma features capture harmonic content, and ZCR gives insights into the frequency content and noisiness. Together, these features form a robust foundation for training machine learning models to recognize and classify different types of audio signals, whether it be for spoof detection, speaker recognition, or other audio analysis tasks.
 ## About Deepfakes
 
 Deepfake audios are typically created using deep learning algorithms such as Generative Adversarial Networks (GANs) or Variational Autoencoders (VAEs). These models analyze and synthesize speech patterns, intonations, and cadences from large datasets of recorded speech. By training on these datasets, they can generate new audio clips that closely mimic the voice and speech characteristics of a specific individual, even capturing nuances like accents and emotional inflections.
